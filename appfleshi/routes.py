@@ -34,7 +34,7 @@ def createaccount():
 @login_required
 def profile(user_id):
     if int(user_id) == int(current_user.id):
-        return render_template('profile.html', user=current_user)
+        return render_template('profile.html', user=current_user),
     else:
         user = User.query.get(int(user_id))
         return render_template('profile.html', user=user)
